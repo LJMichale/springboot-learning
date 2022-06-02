@@ -1,0 +1,15 @@
+
+server:
+  port: 9007
+  servlet:
+    context-path: /
+    session:
+      timeout: 604800
+
+# ############# Eureka 配置
+eureka:
+  client:
+    register-with-eureka: true #表示是否将自己注册到EurekaServer 默认为 true
+    fetch-registry: true		# 表示是否从EurekaServer 抓取已有的信息,默认为true
+    service-url:
+      defaultZone: http://localhost:9001/eureka #入驻的地址(集群处理的话,多个地址之间,使用逗号隔开)

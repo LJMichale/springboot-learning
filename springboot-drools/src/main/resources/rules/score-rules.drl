@@ -1,0 +1,17 @@
+package rules; // 同一个包下的rules文件可以相互访问
+
+import com.example.entity.Order;
+
+// < 100, 不加分
+rule "score_1"
+when
+    $order:Order(amount < 100)
+then
+    $order.setScore(0);
+    System.out.println("触发了规则:amount < 100, score = score + 0 ");
+end
+
+
+
+
+

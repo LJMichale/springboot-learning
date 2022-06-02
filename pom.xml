@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>springboot-learning</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot-dependencies.version>2.3.8.RELEASE</spring-boot-dependencies.version>
+        <hutool.version>5.1.4</hutool.version>
+        <druid-starter>1.2.8</druid-starter>
+        <mybatis-plus-boot-starter.version>3.4.0</mybatis-plus-boot-starter.version>
+        <lombok.version>1.18.16</lombok.version>
+        <jackjson.version>2.11.4</jackjson.version>
+        <guava.version>21.0</guava.version>
+        <log4j.version>2.17.1</log4j.version>
+        <mysql-connector-java.version>8.0.22</mysql-connector-java.version>
+        <ojdbc8.version>12.2.0.1</ojdbc8.version>
+        <clickhouse.version>0.2.6</clickhouse.version>
+        <postgresql.version>42.2.14</postgresql.version>
+        <banner.version>1.0.2</banner.version>
+        <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
+        <!--<flyway.version>6.4.4</flyway.version>-->
+        <sa-token.version>1.28.0</sa-token.version>
+        <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+        <maven-assembly-plugin.version>3.2.0</maven-assembly-plugin.version>
+        <maven.resource.version>3.2.0</maven.resource.version>
+        <junit.version>4.12</junit.version>
+        <!--  `provided` for product environment ,`compile` for dev environment  -->
+        <scope.runtime>provided</scope.runtime>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>nexus-aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <modules>
+        <module>springboot-multidatasource</module>
+        <module>springboot-drools</module>
+        <module>springboot-mybatis</module>
+        <module>springboot-elasticsearch</module>
+        <module>springboot-ck</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- mybatis-plus start -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

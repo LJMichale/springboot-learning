@@ -1,0 +1,10 @@
+
+spring:
+  profiles:
+    active: dev
+  aop:
+    proxy-target-class: true
+  devtools:
+    restart:
+  application:
+    name: springboot-eureka-client

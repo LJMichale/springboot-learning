@@ -1,0 +1,19 @@
+
+spring:
+  application:
+    name: springboot-multidatasource
+
+server:
+  port: 8888
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.example.dao.model
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+  ##### mybatis-plus打印完整sql(只适用于开发环境)
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl

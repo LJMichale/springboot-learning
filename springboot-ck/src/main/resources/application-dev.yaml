@@ -1,0 +1,18 @@
+spring:
+  profiles: dev
+  oneself-custom:
+    clickhouse:
+      address: jdbc:clickhouse://10.8.182.61:8123
+      username: default
+      password: FJ/LMeo5
+      db: system
+      socketTimeout: 600000
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    click:
+      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
+      url: jdbc:clickhouse://10.8.182.61:8123/default
+      initialSize: 10
+      maxActive: 100
+      minIdle: 10
+      maxWait: 6000

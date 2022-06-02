@@ -1,0 +1,21 @@
+server:
+  port: 18099
+
+spring:
+  application:
+    name: springboot-mybatis
+  datasource:
+    bigdata:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/bigdata?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+      username: root
+      password: abc1314520
+
+# Mybatis-plus配置
+mybatis-plus:
+  type-aliases-package: com.example.model
+mybatis:
+  config-location: classpath:mybatis-config.xml
+logging:
+  level:
+    com.dinghuo.leviathanreports.dal.mapper: debug
